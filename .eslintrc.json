@@ -1,5 +1,9 @@
 {
-  "extends": ["next/core-web-vitals", "eslint:recommended", "airbnb"],
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "extends": ["eslint:recommended", "airbnb", "next/core-web-vitals"],
   "rules": {
     "object-curly-spacing": ["error", "always"],
     "import/extensions": "off",
@@ -8,6 +12,13 @@
     "react/jsx-filename-extension": ["error", { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
     "import/prefer-default-export": "off",
     "no-return-await": "off",
-    "no-console": "warn"
+    "no-console": "warn",
+    "no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+    "react/function-component-definition": [
+      "error",
+      {
+        "namedComponents": ["function-declaration", "arrow-function"]
+      }
+    ]
   }
 }
