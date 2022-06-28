@@ -14,15 +14,15 @@ const Home: NextPage = () => {
   return (
     <Page>
       <Head>
-        <title>rift-top Rooms</title>
+        <title>Rift-top</title>
         <meta name="description" content="rift-top - rooms" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <NavigationBar />
+      <NavigationBar title="Rift-top" />
 
       {roomsQuery.data?.rooms?.map((room) => (
-        <Box key={room.id} m={4} p={4} borderRadius="lg" boxShadow="sm">
+        <Box key={room.id} m={4} p={4} bg="#2f3136" borderRadius="lg" boxShadow="sm">
           {room.name}
         </Box>
       ))}

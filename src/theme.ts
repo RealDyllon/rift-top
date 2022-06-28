@@ -19,6 +19,10 @@ const defaultTheme: Partial<ChakraTheme> = {
       900: '#51040d',
     },
   },
+  // fonts: {
+  //   heading: '\'MedievalSharp\', sans-serif',
+  //   body: '\'MedievalSharp\', sans-serif',
+  // },
   styles: {
     global: (props) => ({
       body: {
