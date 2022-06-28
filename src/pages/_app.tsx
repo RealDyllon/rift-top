@@ -1,10 +1,16 @@
 import '../styles/globals.css';
 import type { AppProps } from 'next/app';
 import { withTRPC } from '@trpc/next';
+import { ChakraProvider } from '@chakra-ui/react';
 import { AppRouter } from './api/trpc/[trpc]';
+import { theme } from '../theme';
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+  return (
+    <ChakraProvider theme={theme}>
+      <Component {...pageProps} />
+    </ChakraProvider>
+  );
 }
 
 export default withTRPC<AppRouter>({
