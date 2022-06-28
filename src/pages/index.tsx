@@ -3,6 +3,7 @@ import Head from 'next/head';
 import { Box } from '@chakra-ui/react';
 import { trpc } from '../utils/trpc';
 import NavigationBar from '../components/NavigationBar';
+import Page from '../components/Page';
 
 const Home: NextPage = () => {
   const roomsQuery = trpc.useQuery(['rooms.getRooms', { username: 'waldo' }]);
@@ -11,7 +12,7 @@ const Home: NextPage = () => {
     return <div>Loading...</div>;
   }
   return (
-    <Box bg="gray.100">
+    <Page>
       <Head>
         <title>rift-top Rooms</title>
         <meta name="description" content="rift-top - rooms" />
@@ -21,12 +22,11 @@ const Home: NextPage = () => {
       <NavigationBar />
 
       {roomsQuery.data?.rooms?.map((room) => (
-        <Box key={room.id} bg="white" m={4} p={4} borderRadius="lg" boxShadow="sm">
+        <Box key={room.id} m={4} p={4} borderRadius="lg" boxShadow="sm">
           {room.name}
         </Box>
       ))}
-    </Box>
-
+    </Page>
   );
 };
 

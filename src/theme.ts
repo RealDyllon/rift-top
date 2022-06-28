@@ -1,7 +1,11 @@
 import { ChakraTheme, extendTheme } from '@chakra-ui/react';
+import { mode } from '@chakra-ui/theme-tools';
 
 const defaultTheme: Partial<ChakraTheme> = {
-  // todo
+  config: {
+    initialColorMode: 'dark',
+    useSystemColorMode: false,
+  },
   colors: {
     primary: {
       100: '#fdebeb',
@@ -14,6 +18,14 @@ const defaultTheme: Partial<ChakraTheme> = {
       800: '#75131d',
       900: '#51040d',
     },
+  },
+  styles: {
+    global: (props) => ({
+      body: {
+        bg: mode('#ffffff', '#36393f')(props),
+        // bg: '#36393f',
+      },
+    }),
   },
 };
 

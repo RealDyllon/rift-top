@@ -1,15 +1,13 @@
-import '../styles/globals.css';
 import type { AppProps } from 'next/app';
 import { withTRPC } from '@trpc/next';
-import { ChakraProvider } from '@chakra-ui/react';
 import { AppRouter } from './api/trpc/[trpc]';
-import { theme } from '../theme';
+import { Chakra } from '../Chakra';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ChakraProvider theme={theme}>
+    <Chakra cookies={pageProps.cookies}>
       <Component {...pageProps} />
-    </ChakraProvider>
+    </Chakra>
   );
 }
 
@@ -37,3 +35,6 @@ export default withTRPC<AppRouter>({
    */
   ssr: true,
 })(MyApp);
+
+// re-export the reusable `getServerSideProps` function
+export { getServerSideProps } from '../Chakra';
