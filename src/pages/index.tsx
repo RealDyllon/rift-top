@@ -4,7 +4,7 @@ import styles from '../styles/Home.module.css';
 import { trpc } from '../utils/trpc';
 
 const Home: NextPage = () => {
-  const hello = trpc.useQuery(['index.hello', { text: 'rift-top' }]);
+  const hello = trpc.useQuery(['rooms.getRooms', { username: 'waldo' }]);
 
   if (!hello.data) {
     return <div>Loading...</div>;
@@ -19,7 +19,11 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
         <div>
-          <p>{hello.data?.greeting}</p>
+          {hello.data?.rooms?.map((room) => (
+            <div key={room.id}>
+              {room.name}
+            </div>
+          ))}
         </div>
       </main>
     </div>

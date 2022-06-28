@@ -6,6 +6,7 @@
  */
 import { createRouter } from '../createRouter';
 import { indexRouter } from './index';
+import { roomsRouter } from './rooms';
 
 export const appRouter = createRouter()
 /**
@@ -24,6 +25,7 @@ export const appRouter = createRouter()
 /**
      * Merge `indexRouter` under `index.`
      */
-  .merge('index.', indexRouter);
+  .merge('index.', indexRouter)
+  .merge('rooms.', roomsRouter);
 
 export type AppRouter = typeof appRouter;
