@@ -2,8 +2,9 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import { Box } from '@chakra-ui/react';
 import { trpc } from '../utils/trpc';
-import NavigationBar from '../components/NavigationBar';
+import NavigationBar from '../components/navigationBar';
 import Page from '../components/Page';
+import { BottomTabs } from '../components/bottomTabs/BottomTabs';
 
 const Home: NextPage = () => {
   const roomsQuery = trpc.useQuery(['rooms.getRooms', { username: 'waldo' }]);
@@ -26,6 +27,8 @@ const Home: NextPage = () => {
           {room.name}
         </Box>
       ))}
+
+      <BottomTabs />
     </Page>
   );
 };
