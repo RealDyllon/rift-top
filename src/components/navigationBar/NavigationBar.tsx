@@ -2,6 +2,7 @@ import {
   Avatar, AvatarBadge, Flex, Heading, Spacer,
   useDisclosure,
 } from '@chakra-ui/react';
+import Link from 'next/link';
 import { AccountDrawer } from './AccountDrawer';
 
 interface NavigationBarProps {
@@ -14,7 +15,7 @@ export const NavigationBar = ({ title } : NavigationBarProps) => {
   return (
     <Flex
       alignItems="center"
-      bg="#36393f"
+      bg="grey.700"
       px={4}
       pt={2}
       pb={3}
@@ -23,15 +24,32 @@ export const NavigationBar = ({ title } : NavigationBarProps) => {
       position="fixed"
       width="100vw"
     >
+      <Link href="/">
+        <Heading
+          size="lg"
+          color="torch.100"
+          fontFamily="UnifrakturMaguntia"
+          fontWeight="400"
+          textShadow="2px 3px #000000"
+          mt="1.5"
+          mr="3"
+        >
+          Rift-top
+        </Heading>
+      </Link>
       <Heading
-        size="xl"
-        color="primary.400"
-        fontFamily="MedievalSharp"
+        alignSelf="end"
+        fontFamily="UnifrakturMaaguntia"
+        fontWeight="400"
+        fontSize="22"
+        color="grey.500"
       >
         {title}
       </Heading>
+
       <Spacer />
-      <Avatar size="sm" onClick={onOpen}>
+
+      <Avatar size="sm" onClick={onOpen} mt="5px">
         <AvatarBadge boxSize="1em" bg="teal.500" />
       </Avatar>
       <AccountDrawer onClose={onClose} isOpen={isOpen} />
