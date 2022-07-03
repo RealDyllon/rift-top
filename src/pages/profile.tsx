@@ -14,7 +14,7 @@ const Profile: NextPage = () => {
   if (!profilesQuery.data) {
     return (
       <Center>
-        <Spinner mt="150" size="xl" thickness="6px" isIndeterminate color="torch.100" />
+        <Spinner mt="150" size="xl" thickness="6px" color="torch.100" />
       </Center>
     );
   }
