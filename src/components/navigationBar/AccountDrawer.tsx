@@ -1,8 +1,9 @@
 import {
   Avatar,
-  AvatarBadge, Box, Divider,
-  Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerHeader, DrawerOverlay, Flex, Text,
+  AvatarBadge,
+  Drawer, DrawerBody, DrawerContent, DrawerHeader, DrawerOverlay, Flex, Text,
 } from '@chakra-ui/react';
+import Link from 'next/link';
 import React from 'react';
 
 interface AccountDrawerProps {
@@ -11,13 +12,14 @@ interface AccountDrawerProps {
 }
 
 const menuOptions = [
+
   {
-    name: 'Profile',
+    name: 'Account',
     href: '/profile',
   },
   {
-    name: 'Account',
-    href: '/settings',
+    name: 'Characters',
+    href: '/characters',
   },
   {
     name: 'Friends',
@@ -41,9 +43,10 @@ export const AccountDrawer = ({ onClose, isOpen } : AccountDrawerProps) => (
         {menuOptions.map((option) => (
           <React.Fragment key={option.href}>
             <Flex>
-              <Text fontWeight="600" my={2}>{option.name}</Text>
+              <Link href={option.href}>
+                <Text fontWeight="600" my={2}>{option.name}</Text>
+              </Link>
             </Flex>
-            {/* <Divider /> */}
           </React.Fragment>
         ))}
       </DrawerBody>
