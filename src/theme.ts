@@ -18,16 +18,31 @@ const defaultTheme: Partial<ChakraTheme> = {
       800: '#75131d',
       900: '#51040d',
     },
+    torch: {
+      100: '#d3864f',
+      200: '#ad6f42',
+      300: '#885836',
+      400: '#65422a',
+      500: '#442e1e',
+      600: '#530000',
+      700: '#000000',
+    },
+    grey: {
+      100: '#cccacd',
+      200: '#9f97a0',
+      300: '#837a84',
+      400: '#6a636b',
+      500: '#4b474e',
+      600: '#3c383e',
+      700: '#2e2b30',
+      800: '#1c1b1f',
+    },
   },
-  // fonts: {
-  //   heading: '\'MedievalSharp\', sans-serif',
-  //   body: '\'MedievalSharp\', sans-serif',
-  // },
+
   styles: {
     global: (props) => ({
       body: {
-        bg: mode('#ffffff', '#36393f')(props),
-        // bg: '#36393f',
+        bg: mode('#2e2b30', '#36393f')(props),
       },
     }),
   },
