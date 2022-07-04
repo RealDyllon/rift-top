@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import { Box } from '@chakra-ui/react';
+import { Box, Spinner, Center } from '@chakra-ui/react';
 import { trpc } from '../utils/trpc';
 import NavigationBar from '../components/navigationBar';
 import Page from '../components/Page';
@@ -10,7 +10,11 @@ const Home: NextPage = () => {
   const roomsQuery = trpc.useQuery(['rooms.getRooms', { username: 'waldo' }]);
 
   if (!roomsQuery.data) {
-    return <div>Loading...</div>;
+    return (
+      <Center>
+        <Spinner mt="150" size="xl" thickness="6px" isIndeterminate color="torch.100" />
+      </Center>
+    );
   }
   return (
     <Page>
@@ -20,10 +24,10 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <NavigationBar title="Rift-top" />
+      <NavigationBar title="Home" />
 
       {roomsQuery.data?.rooms?.map((room) => (
-        <Box key={room.id} m={4} p={4} bg="#2f3136" borderRadius="lg" boxShadow="sm">
+        <Box key={room.id} m={4} p={4} bg="#2f3136" borderRadius="lg" boxShadow="sm" fontFamily="Caudex" textColor="grey.100">
           {room.name}
         </Box>
       ))}
