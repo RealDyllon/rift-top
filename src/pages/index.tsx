@@ -11,9 +11,12 @@ const Home: NextPage = () => {
 
   if (!roomsQuery.data) {
     return (
-      <Center>
-        <Spinner mt="150" size="xl" thickness="6px" color="torch.100" />
-      </Center>
+      <Page>
+        <NavigationBar />
+        <Center>
+          <Spinner mt="150" size="xl" thickness="6px" color="torch.100" />
+        </Center>
+      </Page>
     );
   }
   return (
