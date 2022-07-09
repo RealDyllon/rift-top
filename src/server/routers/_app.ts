@@ -9,6 +9,8 @@ import { indexRouter } from './index';
 import { roomsRouter } from './rooms';
 import { GameMapRouter } from './gameMap';
 import { profilesRouter } from './profile';
+import { ChatRouter } from './Chat';
+import { SettingsRouter } from './Settings';
 
 export const appRouter = createRouter()
 /**
@@ -30,6 +32,8 @@ export const appRouter = createRouter()
   .merge('index.', indexRouter)
   .merge('rooms.', roomsRouter)
   .merge('profile.', profilesRouter)
+  .merge('chats.', ChatRouter)
+  .merge('settings.', SettingsRouter)
   .merge('gameMap.', GameMapRouter);
 
 export type AppRouter = typeof appRouter;
