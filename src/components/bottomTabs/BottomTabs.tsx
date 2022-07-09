@@ -1,5 +1,6 @@
 import { Flex, Text } from '@chakra-ui/react';
 import { AtSignIcon, ChatIcon, SettingsIcon } from '@chakra-ui/icons';
+import ActiveLink from './useroute';
 
 const tabIconProps = {
   w: 5,
@@ -29,10 +30,12 @@ export const BottomTabs = () => (
     boxShadow="dark-lg"
   >
     {tabs.map(({ name, icon }) => (
-      <Flex flexDirection="column" alignItems="center" key={name} m={2} color="grey.100">
-        {icon}
-        <Text fontSize="0.9rem" fontFamily="Caudex" textColor="grey.200">{name}</Text>
-      </Flex>
+      <ActiveLink href={`/${name}`} key={name}>
+        <Flex flexDirection="column" alignItems="center" key={name} m={2}>
+          {icon}
+          <Text fontSize="0.9rem" fontFamily="Caudex" >{name}</Text>
+        </Flex>
+      </ActiveLink>
     ))}
   </Flex>
 );
