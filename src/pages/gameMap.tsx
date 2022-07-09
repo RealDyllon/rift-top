@@ -5,6 +5,7 @@ import NavigationBar from '../components/navigationBar';
 import Page from '../components/Page';
 import { trpc } from '../utils/trpc';
 import { MapGrid } from '../components/MapGrid/MapGrid';
+import { BottomTabs } from '../components/bottomTabs/BottomTabs';
 
 const gameMap: NextPage = () => {
   const gameMapQuery = trpc.useQuery(['gameMap.getGameMap', { username: 'waldo' }]);
@@ -15,6 +16,7 @@ const gameMap: NextPage = () => {
         <Center>
           <Spinner mt="150" size="xl" thickness="6px" color="torch.100" />
         </Center>
+        <BottomTabs />
       </Page>
     );
   }

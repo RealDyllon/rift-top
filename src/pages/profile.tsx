@@ -7,6 +7,7 @@ import { trpc } from '../utils/trpc';
 import NavigationBar from '../components/navigationBar';
 import Page from '../components/Page';
 import { AccountPanel } from '../components/Accountpanel/AccountPanel';
+import { BottomTabs } from '../components/bottomTabs/BottomTabs';
 
 const Profile: NextPage = () => {
   const profilesQuery = trpc.useQuery(['profile.getProfile', { username: 'waldo' }]);
@@ -18,6 +19,7 @@ const Profile: NextPage = () => {
         <Center>
           <Spinner mt="150" size="xl" thickness="6px" color="torch.100" />
         </Center>
+        <BottomTabs />
       </Page>
     );
   }
@@ -83,6 +85,7 @@ const Profile: NextPage = () => {
         </Box>
       ))}
       <AccountPanel />
+      <BottomTabs />
 
     </Page>
   );

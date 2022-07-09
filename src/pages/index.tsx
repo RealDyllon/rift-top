@@ -16,6 +16,7 @@ const Home: NextPage = () => {
         <Center>
           <Spinner mt="150" size="xl" thickness="6px" color="torch.100" />
         </Center>
+        <BottomTabs />
       </Page>
     );
   }
