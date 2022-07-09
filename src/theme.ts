@@ -39,6 +39,16 @@ const defaultTheme: Partial<ChakraTheme> = {
     },
   },
 
+  components: {
+    Modal: {
+      baseStyle: () => ({
+        dialog: {
+          bg: '#1c1b1f'
+        }
+      })
+    }
+  },
+
   styles: {
     global: (props) => ({
       body: {
