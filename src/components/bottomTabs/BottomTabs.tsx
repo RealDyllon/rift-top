@@ -10,7 +10,7 @@ const tabIconProps = {
 
 const tabs = [
   {
-    name: 'Rooms',
+    name: 'Lobby',
     icon: <AtSignIcon {...tabIconProps} />,
   }, {
     name: 'Chats',

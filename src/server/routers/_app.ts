@@ -11,6 +11,7 @@ import { GameMapRouter } from './gameMap';
 import { profilesRouter } from './profile';
 import { ChatRouter } from './Chat';
 import { SettingsRouter } from './Settings';
+import { LobbyRouter } from './Lobby';
 
 export const appRouter = createRouter()
 /**
@@ -34,6 +35,7 @@ export const appRouter = createRouter()
   .merge('profile.', profilesRouter)
   .merge('chats.', ChatRouter)
   .merge('settings.', SettingsRouter)
+  .merge('Lobby.', LobbyRouter)
   .merge('gameMap.', GameMapRouter);
 
 export type AppRouter = typeof appRouter;
