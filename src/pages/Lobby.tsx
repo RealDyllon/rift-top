@@ -13,7 +13,7 @@ import { CreateRoom } from '../components/CreateRoom/CreateRoom';
 const Home: NextPage = () => {
   const LobbyQuery = trpc.useQuery(['Lobby.getLobby', { username: 'waldo' }]);
 
-  if (!LobbyQuery.isLoading) {
+  if (LobbyQuery.isLoading) {
     return (
       <Page>
         <NavigationBar title="Lobby" />
