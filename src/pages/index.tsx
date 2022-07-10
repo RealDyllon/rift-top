@@ -9,7 +9,7 @@ import { BottomTabs } from '../components/bottomTabs/BottomTabs';
 const Home: NextPage = () => {
   const roomsQuery = trpc.useQuery(['rooms.getRooms', { username: 'waldo' }]);
 
-  if (!roomsQuery.data) {
+  if (!roomsQuery.isLoading) {
     return (
       <Page>
         <NavigationBar />

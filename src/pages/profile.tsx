@@ -12,7 +12,7 @@ import { BottomTabs } from '../components/bottomTabs/BottomTabs';
 const Profile: NextPage = () => {
   const profilesQuery = trpc.useQuery(['profile.getProfile', { username: 'waldo' }]);
 
-  if (!profilesQuery.data) {
+  if (!profilesQuery.isLoading) {
     return (
       <Page>
         <NavigationBar />
