@@ -28,7 +28,7 @@ export const AccountPanel = () => (
         <React.Fragment key={option.href}>
           <Box h="25px">
             <Link href={option.href}>
-              <Text rounded="md" shadow="dark-lg" fontWeight="600" my={2} pl="2px">
+              <Text rounded="md" shadow="dark-lg" fontWeight="600" my={2} pl="2px" color="white">
                 {option.name}
                 <ChevronRightIcon />
               </Text>

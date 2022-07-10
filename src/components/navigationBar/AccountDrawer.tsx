@@ -31,12 +31,12 @@ export const AccountDrawer = ({ onClose, isOpen } : AccountDrawerProps) => (
   <Drawer placement="top" onClose={onClose} isOpen={isOpen}>
     <DrawerOverlay />
     <DrawerContent bg="#36393f">
-      <DrawerHeader borderBottomWidth="1px">
+      <DrawerHeader borderBottomWidth="1px" borderColor="grey.700">
         <Flex>
           <Avatar size="sm" me={2}>
             <AvatarBadge boxSize="1em" bg="teal.500" />
           </Avatar>
-          <Text>Username</Text>
+          <Text color="white">Username</Text>
         </Flex>
       </DrawerHeader>
       <DrawerBody>
@@ -44,7 +44,7 @@ export const AccountDrawer = ({ onClose, isOpen } : AccountDrawerProps) => (
           <React.Fragment key={option.href}>
             <Flex>
               <Link href={option.href}>
-                <Text fontWeight="600" my={2}>{option.name}</Text>
+                <Text fontWeight="600" my={2} color="white">{option.name}</Text>
               </Link>
             </Flex>
           </React.Fragment>

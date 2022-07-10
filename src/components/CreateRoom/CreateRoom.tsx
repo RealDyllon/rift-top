@@ -40,6 +40,8 @@ export const CreateRoom = () => {
           bg: 'torch.400',
           transform: 'scale(0.98)',
         }}
+        color="white"
+        border="0"
       >
         Create New Room
       </Button>
@@ -50,7 +52,7 @@ export const CreateRoom = () => {
         blockScrollOnMount
       >
         <ModalOverlay />
-        <ModalContent fontFamily="Caudex">
+        <ModalContent fontFamily="Caudex" color="grey.100">
           <ModalHeader>Create New Room</ModalHeader>
           <ModalCloseButton />
           <ModalBody pb={6}>
@@ -61,7 +63,7 @@ export const CreateRoom = () => {
 
             <FormControl>
               <FormLabel mt={4}>Book</FormLabel>
-              <Select variant="filled" placeholder="Select your book" isRequired>
+              <Select variant="filled" placeholder="Select your book" isRequired bg="grey.700">
                 <option value="1">Book 1</option>
                 <option value="2">Book 2</option>
                 <option value="3">Book 3</option>
@@ -89,7 +91,7 @@ export const CreateRoom = () => {
             <Button bg="torch.600" mr={3} onClick={onClose}>
               Create
             </Button>
-            <Button onClick={onClose}>Cancel</Button>
+            <Button onClick={onClose} bg="#1c1b1f">Cancel</Button>
           </ModalFooter>
         </ModalContent>
       </Modal>

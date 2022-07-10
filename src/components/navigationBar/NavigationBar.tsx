@@ -42,7 +42,7 @@ export const NavigationBar = ({ title } : NavigationBarProps) => {
         fontFamily="UnifrakturMaaguntia"
         fontWeight="400"
         fontSize="22"
-        color="grey.500"
+        color="White"
       >
         {title}
       </Heading>

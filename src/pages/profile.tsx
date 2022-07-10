@@ -44,6 +44,7 @@ const Profile: NextPage = () => {
           mr="1rem"
           boxShadow="dark-lg"
           rounded="lg"
+          color='white'
         >
           <Stack direction="row" fontFamily="Caudex">
             <Image h="80px" w="50px" objectFit="fill" src={profile.dp} alt="dagoon" />
