@@ -1,6 +1,7 @@
 import {
  Center, Heading, Stack,
 } from '@chakra-ui/react';
+import { BottomTabs } from '../components/bottomTabs/BottomTabs';
 import NavigationBar from '../components/navigationBar';
 import Page from '../components/Page';
 
@@ -28,6 +29,7 @@ export default function Custom404() {
 
         </Center>
       </Stack>
+      <BottomTabs />
     </Page>
   );
 }
