@@ -9,7 +9,7 @@ import { BottomTabs } from '../components/bottomTabs/BottomTabs';
 
 const gameMap: NextPage = () => {
   const gameMapQuery = trpc.useQuery(['gameMap.getGameMap', { username: 'waldo' }]);
-  if (gameMapQuery.data) {
+  if (gameMapQuery.isLoading) {
     return (
       <Page>
         <NavigationBar />
