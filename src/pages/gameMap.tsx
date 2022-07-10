@@ -9,7 +9,7 @@ import { BottomTabs } from '../components/bottomTabs/BottomTabs';
 
 const gameMap: NextPage = () => {
   const gameMapQuery = trpc.useQuery(['gameMap.getGameMap', { username: 'waldo' }]);
-  if (!gameMapQuery.data) {
+  if (gameMapQuery.data) {
     return (
       <Page>
         <NavigationBar />
@@ -27,7 +27,8 @@ const gameMap: NextPage = () => {
  const arr: chunk[] = [];
 
  for (let i = 1; i < 50; i++) {
-   const temp: chunk = gameMapQuery.data.biomes[Math.floor(Math.random() * gameMapQuery.data.biomes.length)];
+   const temp: chunk = 
+   gameMapQuery.data.biomes[Math.floor(Math.random() * gameMapQuery.data.biomes.length)];
    arr.push(temp);
  }
 
