@@ -36,7 +36,6 @@ const Home: NextPage = () => {
       <NavigationBar title="Lobby" />
       <CreateRoom />
 
-
       {LobbyQuery.data?.Rooms?.map((room) => (
         <Grid
           key={room.id}
@@ -50,16 +49,21 @@ const Home: NextPage = () => {
           m="4"
           p="4"
         >
-          <GridItem area="name">
-            <TruncateString str={room.name} />
+          <GridItem area="name" fontWeight={700}>
+            <TruncateString str={room.name} num={24} />
           </GridItem>
           <GridItem area="book">
             Book:
             {' '}
             {room.book}
           </GridItem>
-          <GridItem area="description">{room.description}</GridItem>
-          <GridItem area="player">Players: 4/6</GridItem>
+          <GridItem area="description" fontSize="14" mt={2}>
+            <TruncateString str={room.description} num={27} />
+          </GridItem>
+          <GridItem area="player" mt={1}>
+            Players: 4/
+            {room.player}
+          </GridItem>
         </Grid>
       ))}
 

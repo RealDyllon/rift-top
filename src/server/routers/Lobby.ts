@@ -11,9 +11,9 @@ export const LobbyRouter = createRouter()
     resolve({ input }) {
       return {
         Rooms: [
-          { id: '001', name: 'Experienced DM', book: 'book 1', description: 'Beginners welcomed' },
-          { id: '002', name: 'Fun times', book: 'book 5', description: 'Easy going chill dnd sess' },
-          { id: '003', name: 'Hardcore! Experienced players only', book: 'book 3', description: 'serious dungeon dwellers only' },
+          { id: '001', name: 'Experienced DM', book: 'book 1', description: 'Beginners welcomed', player: '5' },
+          { id: '002', name: 'Fun times', book: 'book 5', description: 'Easy going chill dnd sess', player: '7' },
+          { id: '003', name: 'Hardcore! Experienced players only', book: 'book 3', description: 'serious dungeon dwellers only', player: '4' },
         ],
       };
     },

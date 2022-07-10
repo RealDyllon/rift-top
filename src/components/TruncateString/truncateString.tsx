@@ -1,10 +1,11 @@
 interface strProp{
     str: string;
+    num: number;
 }
 
-export const TruncateString = ({ str } : strProp) => {
-  if (str.length > 24) {
-    return `${str.slice(0, 24)}...`;
+export const TruncateString = ({ str,num } : strProp) => {
+  if (str.length > num) {
+    return `${str.slice(0, 20)}...`;
   }
   return str;
 };
