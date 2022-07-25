@@ -10,10 +10,16 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
+    "@chakra-ui/icons": "^2.0.2",
+    "@chakra-ui/react": "^2.2.1",
+    "@chakra-ui/theme-tools": "^2.0.2",
+    "@emotion/react": "^11",
+    "@emotion/styled": "^11",
     "@trpc/client": "^9.25.3",
     "@trpc/next": "^9.25.3",
     "@trpc/react": "^9.25.3",
     "@trpc/server": "^9.25.3",
+    "framer-motion": "^6",
     "next": "12.1.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
